@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+/*
+
+Graphic design note: As we are sticking with the official PFW branding, we will be using
+the following color scheme as found on page 46 of the PDF provided by the marketing department's
+branding document found (https://www.pfw.edu/offices/communications-marketing/docs/PFW-Brand-Standard-Guidelines-06_30_2020-DIGITAL.pdf)
+
+We will be using specifically, the Institution Palette. This means that 70% of our composition's 
+color space will be of a PFW primary color swatch (these will be denoted as --pfw-primary-<COLOR>).
+10% of the composition's color space will be used for gold swatches (these will be denoted as --pfw-gold-<COLOR>).
+Finally, 20% of the composition's color space will be of the Black supporting swatch (these will be denoted as --pfw-black-<COLOR>).
+
+To ensure Level AA standards, please see page 50 of the document referenced earlier.
+
+*/
+:root {
+    /* Primary Swatches */
+    --primary-pfw-black: #000;
+    --primary-pfw-golden: #CFB991;
+    --primary-pfw-white: #fff;
+
+    /* Gold Accent Swatches */
+    --pfw-gold-summit: #DAAA00;
+    --pfw-gold-clay: #8E6F3E;
+    --pfw-gold-tassel: #DDB945;
+    --pfw-gold-rumble: #EBD99F;
+
+    /* Black Accent Swatches */
+    --pfw-black-footprints: #555960;
+    --pfw-black-storm: #6F727B;
+    --pfw-black-fog: #9D9795;
+    --pfw-black-tusk: #C4BFC0;
+}
+
+* {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+
+    transition: .3s;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    text-decoration: none !important;
+    color: inherit;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--primary-pfw-white);
+}
+
+main {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    position: sticky;
+    background-color: var(--pfw-gold-tassel);
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+    align-content: center;
+    padding: .25ch;
+    z-index: 1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.btn-gold {
+    background-color: var(--pfw-gold-tassel);
+    color: var(--primary-pfw-white);
+  }
+  
+  .btn-gold:hover {
+    background-color: var(--pfw-gold-summit);
+    color: var(--primary-pfw-white);
+  }

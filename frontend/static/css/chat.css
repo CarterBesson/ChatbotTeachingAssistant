@@ -1,0 +1,264 @@
+@import url("./style.css");
+
+.host {
+    padding: 5% 15% 5% 15%;
+    overflow: hidden !important;
+}
+
+#host {
+    display: table;
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+}
+
+#sidebar {
+    display: table-cell;
+    top: 15vh;
+    left: 2.5vw;
+    height: 80vh;
+    width: 17.5vw;
+    vertical-align: top;
+    background-color: var(--pfw-black-tusk);
+    position: fixed;
+    color: var(--primary-pfw-white);
+
+    overflow-y: auto;
+    border-radius: 2.5em;
+}
+
+#sidebar h1 {
+    padding: 1ch;
+
+    color: var(--primary-pfw-white) !important;
+    font-weight: bold;
+    font-size: 20pt;
+    text-align: center;
+}
+
+.chatList {
+    width: 100%;
+}
+
+.chatList a {
+    text-decoration: none;
+    position: relative;
+    padding: 10px 20px;
+    color: white !important;
+    text-align: left;
+    width: 100%;
+    display: block;
+}
+
+.active {
+    text-align: right;
+    color: var(--primary-pfw-black) !important;
+    background-color: var(--pfw-gold-tassel) !important;
+}
+
+.temporary {
+    font-style: italic;
+}
+
+.chatList a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: var(--pfw-gold-tassel);
+    transition: width 0.3s ease;
+}
+
+.chatList a:hover::after{
+    width: 100%;
+}
+
+#addChat::before {
+    content: 'New Chat';
+    text-align: right;
+    font-weight: bold;
+    color: var(--primary-pfw-white);
+    display: block;
+}
+
+#content {
+    display: table-cell;
+    width: 80%;
+    height: 100%;
+    vertical-align: bottom;
+    overflow-y: auto;
+    padding: 3ch;
+    z-index: -1;
+    margin: 3ch;
+}
+
+#conversation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: auto;
+    top: .5em;
+    width: 100%;
+    height: 70vh;
+    overflow-y: auto;
+    position: relative;
+    scroll-padding: 10px;
+    scroll-margin: 10px;
+}
+
+.chat-box {
+    width: 100%;
+    margin: auto;
+}
+
+#openai_model {
+    position: fixed;
+    top: 10vh;
+    height: 2em !important;
+    padding: 0 .5em;
+    width: auto !important;
+}
+
+.chat-box #input * {
+    height: auto;
+    min-height: 3ch;
+    max-height: 30%;
+    overflow-x: auto;
+    margin: .5ch;
+    position:fixed;
+    left: 22%;
+    width: 75vw;
+    bottom: 5vh;
+}
+
+/*#region Chat bubbles*/
+/* Source: https://codepen.io/Founts/pen/AJyVOr */
+.talk-bubble {
+    display: inline-block;
+    position: relative;
+    max-width: 75%;
+    height: auto;
+    margin: 1em;
+    align-self: flex-start;
+}
+
+.text-from {
+    color: #00000060 !important;
+    font-size: small;
+    width: 100%;
+    padding-top: 1.25em;
+    padding-left: 2.25em;
+    padding-right: 2.25em;
+    margin-bottom: 0 !important;
+    user-select: none;
+    z-index: -1;
+}
+
+.left {
+    align-self: flex-start;
+    text-align: left;
+}
+.right {
+    align-self: flex-end;
+    text-align: right;
+}
+
+.teaching_assistant {
+    background-color: var(--primary-pfw-white);
+    border-color: var(--primary-pfw-white);
+
+    justify-items: left;
+    border-radius: 2.5em;
+}
+
+.student {
+    background-color: var(--pfw-gold-rumble);
+    border-color: var(--pfw-gold-rumble);
+
+    justify-items: right;
+    border-radius: 2.5em;
+}
+
+.talktext {
+    padding: 1.5em;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.talktext p {
+    /* remove webkit p margins */
+    margin: .1em;
+}
+
+/*Right triangle, placed bottom right side slightly in*/
+.tri-right.border.btm-right:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    right: -8px;
+    bottom: -40px;
+    border: 20px solid;
+    border-color: var(--pfw-gold-rumble) var(--pfw-gold-rumble) transparent transparent;
+    z-index: -100;
+}
+
+.tri-right.btm-right:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    right: 2.5em;
+    bottom: -20px;
+    border: 12px solid;
+    border-color: var(--pfw-gold-rumble) var(--pfw-gold-rumble) transparent transparent;
+    z-index: -100;
+}
+
+/*Right triangle, placed bottom left side slightly in*/
+.tri-right.border.btm-left:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -8px;
+    right: auto;
+    top: auto;
+    bottom: -40px;
+    border: 32px solid;
+    border-color: transparent transparent transparent var(--primary-pfw-white);
+    z-index: -100;
+}
+
+.tri-right.btm-left:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 2.5em;;
+    right: auto;
+    top: auto;
+    bottom: -20px;
+    border: 22px solid;
+    border-color: transparent transparent transparent var(--primary-pfw-white);
+    z-index: -100;
+}
+
+/* End Source: https://codepen.io/Founts/pen/AJyVOr */
+/*#endregion*/
+
+pre {
+    white-space: pre-wrap; 
+    word-break: break-word; 
+    background-color: #9e9e9e55;
+    border-radius: .25em;
+    padding: 1em;
+}
+
+.feedback {
+    display: none;
+}
